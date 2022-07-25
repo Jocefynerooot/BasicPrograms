@@ -3,7 +3,7 @@ from tkinter import *
 def table():
     global tableFrame
     tableFrame.destroy()
-    tableFrame = Frame(root)
+    tableFrame = Frame(root)   
     tableFrame.grid(row=2, pady=10, padx=10)
     try:
         lable = Label(tableFrame, text=f"Table of: {int(tableVal.get())}", font="lucida 25 bold", fg="red")
@@ -11,7 +11,7 @@ def table():
         for i in range(10):
             table_v = (i+1)*int(tableVal.get())
             table_l = Label(tableFrame, text=f"{int(tableVal.get())} X {int(i+1)} = {table_v}", font="lucida 20 bold", fg='blue', pady=5)
-            table_l.grid(row=4*i, column=2)
+            table_l.grid(row=4+i, column=2)
     except Exception as e:
         table_l = Label(tableFrame, text="Only Numbers are allowed",font="lucida 20 bold", fg="blue", pady=5)
         table_l.grid(row=4, column=2)
